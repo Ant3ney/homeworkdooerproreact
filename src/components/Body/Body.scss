@@ -1,0 +1,35 @@
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 0vw;
+  transition: max-width 1s;
+}
+
+.body.nav_extended {
+  max-width: 78vw;
+}
+
+.body .inner_body_container {
+  width: 100%;
+  margin-left: 0vw;
+  transition: margin-left 1s;
+}
+
+.body.nav_extended .inner_body_container {
+  margin-left: 22vw;
+}
+
+@media screen and (max-width: 768px) {
+  .body.nav_extended .inner_body_container {
+    margin-left: 0vw;
+  }
+  .body.nav_extended {
+    max-width: 100vw;
+  }
+}

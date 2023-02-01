@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  display: flex;
+  overflow-x: clip;
+}
+
+.App .container {
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+input,
+textarea,
+button {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  border: 0px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+p,
+label,
+h5,
+h6,
+p {
+  color: #707070;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.75rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+label {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+textarea,
+input {
+  background-color: #d9d9d9;
+  padding: 0.25rem;
+  font-size: 12px;
+}
+
+textarea:focus,
+input:focus,
+button:focus {
+  outline: 2px solid rgba(58, 66, 77, 0.5);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  background: #8fb7a5;
+  width: fit-content;
+  padding: 1rem;
+  color: white;
+  font-weight: 700;
+}

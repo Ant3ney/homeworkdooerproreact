@@ -1,0 +1,191 @@
+.saves_container {
+  max-width: 100%;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  .card_container_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    gap: 2rem;
+    margin: 0.9rem 0rem 0rem 0rem;
+  }
+
+  @media screen and (max-width: 1800px) {
+    .card_container_container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 1375px) {
+    .card_container_container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 1090px) {
+    .card_container_container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card_container {
+    /* margin: 1rem 2rem 0rem 0rem; */
+    width: 25rem;
+    height: 32rem;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #8fb7a5;
+    display: flex;
+    flex-direction: column;
+
+    h5 {
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+    }
+    p {
+      font-size: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    h4:not(.paper h4),
+    p:not(.paper p) {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .card_container:hover {
+    cursor: pointer;
+  }
+
+  .card_container.firstOfFour {
+    margin: 1rem auto 0rem 0;
+  }
+  .card_container.middleLeftOfFour {
+    margin: 1rem auto 0rem auto;
+  }
+  .card_container.middleRightOfFour {
+    margin: 1rem auto 0rem auto;
+  }
+  .card_container.lastOfFour {
+    margin: 1rem 0rem 0rem auto;
+  }
+
+  @media screen and (max-width: 1800px) {
+    .card_container {
+      width: 18.5rem;
+      height: 32rem;
+    }
+    .card_container.firstOfThree {
+      margin: 1rem auto 0rem 0;
+    }
+    .card_container.middleOfThree {
+      margin: 1rem auto 0rem auto;
+    }
+    .card_container.lastOfThree {
+      margin: 1rem 0rem 0rem auto;
+    }
+  }
+
+  @media screen and (max-width: 1375px) {
+    .card_container.firstOfTwo {
+      margin: 1rem auto 0rem 0;
+    }
+    .card_container.lastOfTwo {
+      margin: 1rem auto 0rem 0rem;
+    }
+
+    @media screen and (min-width: 1090px) {
+      .card_container {
+        width: 19rem;
+        height: 28rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1090px) {
+    .card_container.single_card {
+      margin: 1rem auto 0rem auto;
+    }
+  }
+
+  .paper {
+    background-color: #fff;
+    padding: 0.8rem;
+    height: 20rem;
+    width: 16rem;
+    margin: auto auto 0rem auto;
+    max-height: 20rem;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .inner_paper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 1375px) {
+    @media screen and (min-width: 1090px) {
+      .paper {
+        height: 16rem;
+        width: 12.8rem;
+      }
+    }
+  }
+
+  .meta-data {
+    background-color: #fff;
+    padding: 0.8rem;
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    position: relative;
+    h4 {
+      font-size: 1.5rem;
+      margin: auto 0rem 0rem 0rem;
+    }
+    p {
+      font-size: 0.8rem;
+      margin: 0.5rem 0rem auto 0rem;
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      z-index: 50;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        margin: 0.25rem 0.25rem 0rem 0rem;
+      }
+    }
+  }
+}
+
+.save_button {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 1.85rem;
+    height: 1.85rem;
+    margin: auto 0rem auto 0.5rem;
+  }
+  p {
+    margin: auto 0rem auto 0rem;
+    color: #fff;
+  }
+}

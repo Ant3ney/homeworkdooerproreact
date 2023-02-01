@@ -1,0 +1,12 @@
+.regurgitator_container {
+  max-width: 100%;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+
+  .reg_core_item_map {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
