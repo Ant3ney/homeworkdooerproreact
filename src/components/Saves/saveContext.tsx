@@ -17,7 +17,16 @@ export type Regurgitator = {
   type: "regurgitator";
 };
 
-export type Content = ReadThenAnswer | Regurgitator;
+export type EssayFramework = {
+  step?: string;
+  notes?: string;
+  essay?: string;
+  regurgitation?: string[];
+  name: string | null;
+  type: "essayFramework";
+};
+
+export type Content = ReadThenAnswer | Regurgitator | EssayFramework;
 
 export function SaveProvider({ children }: any) {
   const [saves, setSaves] = useState<Content[]>();

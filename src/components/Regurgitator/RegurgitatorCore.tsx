@@ -55,6 +55,7 @@ export default function RegurgitatorCore({
       })}
       {children}
       <textarea
+        className="regurgitator_output"
         defaultValue={regurgitation.join(". ")}
         rows={4}
         readOnly={false}

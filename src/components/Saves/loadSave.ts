@@ -24,6 +24,16 @@ function loadSave(content: Content, navigate: any) {
           }&name=${content.name}`
         );
       };
+    case "essayFramework":
+      return () => {
+        navigate(
+          `/essayFramework?step=${content.step}&name=${content.name}&essay=${
+            content.essay
+          }&regurgitation=${content?.regurgitation?.join(
+            "---split-me---"
+          )}&notes=${content.notes}`
+        );
+      };
     default:
       return () => {
         //@ts-ignore

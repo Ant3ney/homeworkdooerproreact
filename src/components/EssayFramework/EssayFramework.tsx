@@ -4,7 +4,9 @@ import essayFrameworkContext from "./EssayFrameworkContext";
 import { EssayFrameworkProvider } from "./EssayFrameworkContext";
 
 function EssayFramework({}: any) {
-  const { step, steps }: any = useContext(essayFrameworkContext);
+  const { step, steps, onForceStepChange }: any = useContext(
+    essayFrameworkContext
+  );
   const StepView = steps[step].View;
   const stepArray = Object.keys(steps);
   return (
@@ -19,6 +21,9 @@ function EssayFramework({}: any) {
                 className={`${
                   step === steps[stepKey].step ? "current_step" : ""
                 }`}
+                onClick={() => {
+                  onForceStepChange(steps[stepKey].step);
+                }}
               >
                 {steps[stepKey].title}
               </button>

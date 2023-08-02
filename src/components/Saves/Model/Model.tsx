@@ -9,33 +9,6 @@ export interface Model {
   content: Content;
 }
 
-const placeholderCardsContent = [
-  {
-    name: "Lab 01 Biological anthropolog sasdafsdafasd sdfas",
-    type: "Read Text And Answer Question",
-  },
-  {
-    name: "Lab 01 Biological anthropolog sasdafsdafasd sdfas",
-    type: "Read Text And Answer Question",
-  },
-  {
-    name: "Lab 01 Biological anthropolog sasdafsdafasd sdfas",
-    type: "Read Text And Answer Question",
-  },
-  {
-    name: "Lab 01 Biological anthropolog sasdafsdafasd sdfas",
-    type: "Read Text And Answer Question",
-  },
-  {
-    name: "Lab 01 Biological anthropolog sasdafsdafasd sdfas",
-    type: "Read Text And Answer Question",
-  },
-  {
-    name: "Lab 01 Biological anthropolog sasdafsdafasd sdfas",
-    type: "Read Text And Answer Question",
-  },
-];
-
 function Model({ onExit, content }: Model) {
   const [name, setName] = useState<string>();
 

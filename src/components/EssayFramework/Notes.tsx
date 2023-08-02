@@ -18,13 +18,13 @@ function Notes({}: any) {
       <textarea
         className="notes_textarea"
         rows={10}
-        defaultValue={""}
+        defaultValue={notes}
         onChange={(e) => {
           setNotes(e.target.value);
         }}
       />
       <StandardButtonsContainer>
-        <button onClick={onGenerateEssay}>Generate Answer</button>
+        <button onClick={onGenerateEssay}>Generate Essay</button>
       </StandardButtonsContainer>
     </>
   );

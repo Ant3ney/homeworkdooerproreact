@@ -66,6 +66,17 @@ function Paper({ content }: { content: Content }) {
                   <p>{content.regurgitation?.join(". ")}</p>
                 </>
               );
+            case "essayFramework":
+              return (
+                <>
+                  <h5>Notes</h5>
+                  <p>{content.notes}</p>
+                  <h5>Essay</h5>
+                  <p>{content.essay}</p>
+                  <h5>Regurgitated Text Below</h5>
+                  <p>{content.regurgitation?.join(". ")}</p>
+                </>
+              );
           }
         })()}
       </section>

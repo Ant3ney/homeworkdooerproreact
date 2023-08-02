@@ -4,15 +4,16 @@ import { ThreeCircles } from "react-loader-spinner";
 import StandardButtonsContainer from "./StandardButtonsContainer";
 
 function Generate({}: any) {
-  const { essay }: any = useContext(essayFrameworkContext);
-  const stepName = !essay ? "Generating Essay..." : "Generate";
+  const { essay, onGenerateEssay, generatingEssay, onClickedRegurgitate }: any =
+    useContext(essayFrameworkContext);
+  const stepName = generatingEssay ? "Generating Essay..." : "Generate";
 
   console.log("In generate view", essay);
   return (
     <>
       <h2 className="stepName">{stepName}</h2>
-      {!essay ? <LoadingDesign /> : <></>}
-      {essay ? <p className="generated_essay">{essay}</p> : <></>}
+      {generatingEssay ? <LoadingDesign /> : <></>}
+      {!generatingEssay ? <p className="generated_essay">{essay}</p> : <></>}
       <StandardButtonsContainer>
         <ManageEssayButtonSet />
       </StandardButtonsContainer>
@@ -22,8 +23,10 @@ function Generate({}: any) {
   function ManageEssayButtonSet() {
     return (
       <>
-        <button>Regurgitate</button>
-        <button>Regenerate</button>
+        <button onClick={onClickedRegurgitate}>Regurgitate</button>
+        <button onClick={onGenerateEssay}>
+          Regenerate <img src="icons/refresh.svg" alt="refresh" />
+        </button>
       </>
     );
   }
