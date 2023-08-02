@@ -1,0 +1,77 @@
+.essay_framework {
+  padding: 2rem;
+
+  .service_type,
+  .stepName,
+  button,
+  .step_instructions,
+  .generated_essay,
+  .notes_textarea {
+    margin: 0;
+  }
+
+  .service_type {
+    font-size: 1.75rem;
+    color: #707070;
+  }
+
+  .progression_container {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    margin: 2rem auto 0 auto;
+    button {
+      padding: 0;
+      background-color: transparent;
+      color: #707070;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #707070; /* Adjust color as needed */
+      width: 100%;
+      margin: auto 2rem;
+    }
+
+    .current_step {
+      color: #1575ff;
+    }
+  }
+
+  .stepName {
+    font-size: 150%;
+    font-weight: 600;
+    color: #707070;
+    margin: 2rem 0 0 0;
+  }
+
+  .step_instructions,
+  .generated_essay {
+    margin: 1rem 0 0 0;
+  }
+
+  .notes_textarea {
+    width: 100%;
+    margin: 2rem 0 0 0;
+  }
+
+  .standard_buttons_container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    gap: 1rem;
+  }
+
+  .loading_design_container {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 1224px) {
+  .essay_framework {
+    .progression_container {
+      width: 100%;
+      font-size: 0.75rem;
+    }
+  }
+}

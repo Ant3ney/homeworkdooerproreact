@@ -35,11 +35,14 @@ export default function Nav() {
           </ul>
           <hr />
           <ul>
-            <Link to="/">
+            <Link to="/readAnswer">
               <li>Read text then answer question</li>
             </Link>
             <Link to="/regurgitator">
               <li>Regurgitator (Plagiarism Protection)</li>
+            </Link>
+            <Link to="/essayFramework">
+              <li>Essay Framework</li>
             </Link>
           </ul>
         </div>

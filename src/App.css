@@ -95,3 +95,7 @@ button {
   color: white;
   font-weight: 700;
 }
+
+.fixed_width_btn {
+  width: 12rem;
+}
