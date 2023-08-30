@@ -104,28 +104,38 @@ export function EssayFrameworkProvider({ children }: any) {
     setGeneratingEssay(true);
     console.log("Generating essay", authRoute);
     setStep("generate");
-    fetch(`${authRoute}/generateEssay`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ notes }),
-    })
-      .then(async (res) => {
-        if (!res.ok) return Promise.reject(await res.text());
-        return res.text();
+
+    let retries = 3;
+    function fetchEssay() {
+      fetch(`${authRoute}/generateEssay`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ notes }),
       })
-      .then((essay) => {
-        console.log("essay:", essay);
-        setEssay(essay);
-        setGeneratingEssay(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Error generating essay");
-        setStep("notes");
-        setGeneratingEssay(false);
-      });
+        .then(async (res) => {
+          if (!res.ok) return Promise.reject(await res.text());
+          return res.text();
+        })
+        .then((essay) => {
+          console.log("essay:", essay);
+          setEssay(essay);
+          setGeneratingEssay(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          if (retries > 0) {
+            retries--;
+            fetchEssay();
+          } else {
+            setStep("notes");
+            setGeneratingEssay(false);
+            alert("Error generating essay");
+          }
+        });
+    }
+    fetchEssay();
   }
 
   function onClickedRegurgitate() {
